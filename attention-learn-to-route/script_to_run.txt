@@ -1,0 +1,6 @@
+LEO_REUSE=1 python run.py --problem cvrp --graph_size 50 --n_epochs 100 --baseline rollout --run_name cvrp_CMT1_reuse --checkpoint_epochs 5 --max_grad_norm 10.0 --lr_decay 0.9 --val_dataset "/home/ubuntu/dev/attention-learn-to-route/data/cvrp/CMT1_many.pkl"
+
+python eval.py -f --multiprocessing --eval_batch_size 1 --max_calc_batch_size 100000 --model "/home/ubuntu/dev/attention-learn-to-route/outputs/cvrp_50/cvrp_CMT1_reuse_20210807T150853/epoch-50.pt" --width 5000 --decode_strategy "bs" "/home/ubuntu/dev/attention-learn-to-route/data/cvrp/CMT1.pkl"
+
+python plot_data.py --results "/home/ubuntu/dev/attention-learn-to-route/results/cvrp/CMT1/CMT1-cvrp_CMT1_reuse_20210807T150853_epoch-50-bs5000-t1-0-1.pkl" --problem "/home/ubuntu/dev/cvrplib/Christofides, Mingozzi and Toth (1979)/CMT1.vrp" --dataset "/home/ubuntu/dev/attention-learn-to-route/data/cvrp/CMT1.pkl" --name CMT1
+
