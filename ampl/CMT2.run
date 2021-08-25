@@ -1,0 +1,8 @@
+reset;
+option solver '/Users/leo/Downloads/ampl/gurobi_ampl';
+option gurobi_options 'timelim 60';
+model cvrp.mod;
+data CMT2.dat;
+solve; 
+display total_dist;
+display _total_solve_time;
